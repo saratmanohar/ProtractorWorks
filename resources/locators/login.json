@@ -1,0 +1,7 @@
+{
+    "_comment":"This file contains the login page locators",
+    "username":"model=Auth.user.name",
+    "password":"model=Auth.user.password",
+    "userdetails":"model=model[options.key]",
+    "loginbutton":"buttontext=Login"
+}

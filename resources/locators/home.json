@@ -1,0 +1,6 @@
+{
+    "_comment":"This file contains the home page locators",
+    "header":"$=h1.ng-scope",
+    "logoutbutton":"linktext=Logout",
+    "welcometext":"css=p"
+}
