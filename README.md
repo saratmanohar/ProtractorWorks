@@ -1,2 +1,2 @@
 # ProtractorWorks
-Learning code for protractor
+Learning code for protractor with simple examples
