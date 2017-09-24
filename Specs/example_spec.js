@@ -1,4 +1,4 @@
-describe('angularjs homepage', function() {
+describe('angularjs homepage-Edit', function() {
   it('should greet the named user', function() {
     browser.get('http://www.angularjs.org');
 
@@ -9,7 +9,7 @@ describe('angularjs homepage', function() {
     expect(greeting.getText()).toEqual('Hello Julie!');
   });
 
-  describe('todo list', function() {
+  describe('todo list1', function() {
     var todoList;
 
     beforeEach(function() {
