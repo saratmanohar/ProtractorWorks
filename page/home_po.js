@@ -1,19 +1,20 @@
 var login_page =require('./login_po.js');
 var pageHandler = require('../core/PageHandler.js');
-var locators = require('../resources/locators/home.json');
+var currentPage = require('path').basename(__filename).split('_po.js')[0];
+var locators = require('../resources/locators/'+currentPage+'.json');
 
 var home_page = function(){
 
     this.isHomePageDisplayed = function() {
-        return pageHandler.findElement(locators.header).isDisplayed();
+        return pageHandler.isDisplayed(locators.header);
     };
 
     this.getWelcomeText = function(){
-        return pageHandler.findElements(locators.welcometext).get(0).getText();
+       return pageHandler.getTextFromFirstElement(locators.welcometext);
     };
 
     this.clickLogout = function(){
-        pageHandler.findElements(locators.logoutbutton).click();
+        pageHandler.clickElement(locators.logoutbutton);
         return login_page;
     };
 

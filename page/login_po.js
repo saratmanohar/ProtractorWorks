@@ -1,28 +1,29 @@
 var home_page = require('./home_po.js');
 var pageHandler = require('../core/PageHandler.js');
-var locators = require('../resources/locators/login.json');
+var currentPage = require('path').basename(__filename).split('_po.js')[0];
+var locators = require('../resources/locators/'+currentPage+'.json');
 
 var login_page = function() {
 
     this.setUserName = function(userName) {
-       pageHandler.findElement(locators.username).sendKeys(userName);
+        pageHandler.writeText(locators.username,userName);
     };
 
     this.setPassword = function(password) {
-        pageHandler.findElement(locators.password).sendKeys(password);
+        pageHandler.writeText(locators.password,password);
     };
 
     this.setNewUserDetails = function(userName) {
-        pageHandler.findElement(locators.userdetails).sendKeys(userName);
+        pageHandler.writeText(locators.userdetails,userName);
     };
 
     this.clickLoginButton = function(){
-        pageHandler.findElement(locators.loginbutton).click();
+        pageHandler.clickElement(locators.loginbutton);
         return home_page;
     };
 
     this.isLoginButtonDisplayed = function(){
-       return pageHandler.findElement(locators.loginbutton).isDisplayed();
+        return pageHandler.isDisplayed(locators.loginbutton);
     };
 
 };
