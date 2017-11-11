@@ -1,15 +1,16 @@
-var login_page = require('../PageObjects/login_po.js');
-var home_page = require('../PageObjects/home_po.js');
+var login_page = require('../page/login_po.js');
+var home_page = require('../page/home_po.js');
+var properties = require('../resources/data/properties.json');
 
 describe("Login Test Validations", function(){
 
     it("Login to application and verify home page is displayed", function(){
-        browser.get("http://www.way2automation.com/angularjs-protractor/registeration/#/login");//Load URL
+        browser.get(properties.url);//Load URL
         expect(login_page.isLoginButtonDisplayed()).toEqual(true);//Login page is displayed
         
         //Login
-        login_page.setUserName('angular');
-        login_page.setPassword('password');
+        login_page.setUserName(properties.user);
+        login_page.setPassword(properties.password);
         login_page.setNewUserDetails('angualr-sm');
 
         //Verify Home Page

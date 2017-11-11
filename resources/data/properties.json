@@ -1,0 +1,6 @@
+{
+    "_comment":"This file contains the initial set up data & properties",
+    "url":"http://www.way2automation.com/angularjs-protractor/registeration/#/login",
+    "user":"angular",
+    "password":"password"
+}
